@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Categories</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: #000;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card-hover {
+      transition: all 0.5s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 20px 60px rgba(255,255,255,0.08);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gradient-text {
+      background: linear-gradient(to right, white, #888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-overlay {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 30%),
+        rgba(0,0,0,0.7);
+    }
+
+    .rank-glow {
+      box-shadow: 0 0 40px rgba(255,255,255,0.08);
+    }
+
+    video::-webkit-media-controls-panel {
+      background: transparent;
+    }
+
+    .folder-page {
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-5 left-1/2 -translate-x-1/2 z-50 backdrop-blur-xl bg-white/5 border border-white/10 px-6 md:px-10 py-4 rounded-full flex items-center gap-4 md:gap-8">
+    <a href="index.html" class="text-gray-300 hover:text-white transition">
+      Home
+    </a>
+
+    <a href="portfolio.html" class="text-gray-300 hover:text-white transition">
+      Portfolio
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+
+    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-50"> ">
+      <source src="https://cdn.pixabay.com/video/2023/06/06/168485-831573498_large.mp4" type="video/mp4">
+    </video>
+
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <div class="relative z-10 text-center px-6 reveal active">
+
+      <p class="uppercase tracking-[0.5em] text-gray-400 mb-6">
+        Luxury Event Experiences
+      </p>
+
+      <h1 class="text-6xl md:text-8xl font-black leading-tight mb-8 gradient-text">
+        Event Showcase
+
+      </h1>
+
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+        Explore cinematic event showcases categorized into premium wedding,
+        birthday, anniversary, and corporate experiences.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- TRENDING -->
+  <section class="px-6 md:px-16 py-24">
+
+    <div class="mb-12">
+
+      <p class="uppercase tracking-[0.4em] text-gray-500 text-sm mb-3">
+        Popular Ranking
+      </p>
+
+      <h2 class="text-5xl font-bold">
+        Trending Events
+      </h2>
+
+    </div>
+
+    <div id="rankingContainer"
+      class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    </div>
+
+  </section>
+
+  <!-- CATEGORY -->
+  <section class="px-6 md:px-16 pb-32">
+
+    <div class="mb-16">
+
+      <p class="uppercase tracking-[0.4em] text-gray-500 text-sm mb-3">
+        Browse Categories
+      </p>
+
+      <h2 class="text-5xl font-bold">
+        Event Folders
+      </h2>
+
+    </div>
+
+    <div id="categoryGrid"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    </div>
+
+  </section>
+
+  <script>
+
+    /*
+    ==========================================
+    EVENT DATA
+    ==========================================
+    */
+
+    const categories = [
+
+      {
+        name: "Corporate Events",
+        folder: "corporate",
+        videos: [
+          "videos/corporate/corporate.mp4",
+          "videos/corporate/IG_Corporate.mp4",
+          "videos/corporate/IG_Corporate2.mp4",
+          "videos/corporate/daily-annualdinner-ad-2026-05-18.mp4",
+          "videos/corporate/daily-video-ad-from-stress-to-celebration.mp4",
+          "videos/corporate/company-gathering-cheers.mp4"
+        ],
+        thumbnail: "pictures/IG_Corporate.jpg",
+        description: "Professional annual dinner productions."
+      },
+
+      {
+        name: "Wedding Events",
+        folder: "wedding",
+        videos: [
+          "videos/wedding/wedding.mp4",
+          "videos/wedding/wedding2.mp4",
+          "videos/wedding/IG_Wedding.mp4",
+          "videos/wedding/IG_Wedding2.mp4",
+          "videos/wedding/IG_Wedding3.mp4",
+          "videos/wedding/IG_Wedding4.mp4",
+          "videos/wedding/IG_Wedding5.mp4",
+          "videos/wedding/IG_Wedding6.mp4",
+          "videos/wedding/IG_Wedding7.mp4"
+        ],
+        thumbnail: "pictures/IG_Wedding.jpg",
+        description: "Luxury cinematic wedding experiences."
+      },
+
+      {
+        name: "AI Ads",
+        folder: "ai-ads",
+        videos: [
+          "videos/ai-ads/2026-06-05_openclaw_ai_ad.mp4",
+          "videos/ai-ads/2026-06-05_openclaw_ad_ceobaby_v1_fixed.mp4",
+          "videos/ai-ads/2026-06-05_openclaw_ad_internbaby_v1.mp4",
+          "videos/ai-ads/2026-06-05_openclaw_ad_realbaby_v1_fixed.mp4"
+        ],
+        thumbnail: "pictures/2026-05-21_daily-highlight_facebook_v1.jpg",
+        description: "AI-generated OpenClaw event ads."
+      },
+
+      {
+        name: "Chinese New Year",
+        folder: "chinese-new-year",
+        videos: [
+          "videos/chinese-new-year/IG_ChineseNewYear.mp4",
+          "videos/chinese-new-year/IG_ChineseNewYear2.mp4",
+          "videos/chinese-new-year/IG_ChineseNewYear4.mp4",
+          "videos/chinese-new-year/IG_ChineseNewYear5.mp4"
+        ],
+        thumbnail: "pictures/IG_ChineseNewYear.jpg",
+        description: "Festive Chinese New Year celebrations."
+      },
+
+      {
+        name: "Trending Reels",
+        folder: "trending",
+        videos: [
+          "videos/trending/SnapInsta.to_AQPQDeVuh3wuCZPNDhui2TI5wpf5B7xONXxoOManqQZkH0kQ08peUo3FUdVJU16eR6Fsk99Z8UAz4KGPqXs86kEUGB8Y_iM-O-IA8L8.mp4",
+          "videos/trending/SnapInsta.to_AQPVo6GWKUYFLUZDMZ07AEI_VQ-frdXsC7Wf5UB1r34IjlX1sZHG5DWDL2p6mdWK4L5SmL-uOckF_Bc9oTTgW6fN37vzcPJhlcdW1hI.mp4"
+        ],
+        thumbnail: "pictures/IG_PopUpStore.jpg",
+        description: "Viral trending video reels."
+      },
+
+      {
+        name: "Birthday Celebrations",
+        folder: "birthday",
+        videos: [
+          "videos/birthday/birthday.mp4",
+          "videos/birthday/birthday2.mp4"
+        ],
+        thumbnail: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?q=80&w=1600&auto=format&fit=crop",
+        description: "Energetic birthday celebration showcases."
+      },
+
+      {
+        name: "Baby Shower",
+        folder: "baby-shower",
+        videos: [
+          "videos/baby-shower/IG_BabyShower.mp4",
+          "videos/baby-shower/IG_BabyShower2.mp4",
+          "videos/baby-shower/IG_BabyShower3.mp4",
+          "videos/baby-shower/IG_BabyShower4.mp4"
+        ],
+        thumbnail: "pictures/IG_BabyShower.jpg",
+        description: "Sweet baby shower event highlights."
+      },
+
+      {
+        name: "Pop-Up Store",
+        folder: "pop-up-store",
+        videos: [
+          "videos/pop-up-store/IG_PopUpStore.mp4"
+        ],
+        thumbnail: "pictures/IG_PopUpStore.jpg",
+        description: "Pop-up store brand activations."
+      },
+
+      {
+        name: "Brand Roadshow",
+        folder: "brand-roadshow",
+        videos: [
+          "videos/brand-roadshow/IG_BrandRoadShow.mp4"
+        ],
+        thumbnail: "pictures/IG_BrandRoadshow.jpg",
+        description: "Brand roadshow event coverage."
+      },
+
+      {
+        name: "Hari Raya",
+        folder: "hari-raya",
+        videos: [
+          "videos/hari-raya/IG_HariRaya.mp4",
+          "videos/hari-raya/IG_HariRaya2.mp4"
+        ],
+        thumbnail: "pictures/IG_HariRaya.jpg",
+        description: "Joyful Hari Raya celebrations."
+      },
+
+      {
+        name: "Anniversary Events",
+        folder: "anniversary",
+        videos: [
+          "videos/anniversary/daily-anniversary-video-2026-05-18.mp4"
+        ],
+        thumbnail: "https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop",
+        description: "Elegant anniversary event experiences."
+      }
+
+    ];
+
+    /*
+    ==========================================
+    RANKING — SORTED BY VIDEO COUNT
+    ==========================================
+    */
+
+    // Rank categories by video count (most videos = #1)
+    const sortedCategories = [...categories].sort((a, b) => b.videos.length - a.videos.length);
+
+    const rankingContainer = document.getElementById("rankingContainer");
+
+    sortedCategories.slice(0,3).forEach((category, index) => {
+
+      rankingContainer.innerHTML += `
+      
+        <div class="relative overflow-hidden rounded-[32px] h-[320px] reveal rank-glow card-hover">
+
+          <img
+            src="${category.thumbnail}"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/20"></div>
+
+          <div class="relative z-10 h-full flex flex-col justify-between p-10">
+
+            <div class="text-7xl font-black text-white/20">
+              #${index + 1}
+            </div>
+
+            <div>
+
+              <h3 class="text-4xl font-black mb-4">
+                ${category.name}
+              </h3>
+
+              <p class="text-gray-300 mb-6">
+                  ${category.videos.length} Videos</p>
+
+              <div class="flex items-center justify-between">
+
+                <div class="text-gray-300">
+                  ${category.videos.length} Videos
+                </div>
+
+                <div class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl text-sm">
+                  Trending
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      `;
+    });
+
+    /*
+    ==========================================
+    CATEGORY GRID
+    ==========================================
+    */
+
+    const categoryGrid = document.getElementById("categoryGrid");
+
+    categories.forEach(category => {
+
+      categoryGrid.innerHTML += `
+
+        <div class="glass rounded-[36px] overflow-hidden card-hover reveal">
+
+          <div class="relative h-[340px] overflow-hidden">
+
+            <img
+              src="${category.thumbnail}"
+              class="w-full h-full object-cover"
+            />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-8 left-8">
+
+              <div class="flex items-center gap-3 mb-4">
+
+                <div class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl text-sm">
+                  ${category.videos.length} Videos
+                </div>
+
+                <div class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-xl text-sm">
+                  ${category.videos.length} Videos
+                </div>
+
+              </div>
+
+              <h3 class="text-4xl font-black mb-3">
+                ${category.name}
+              </h3>
+
+              <p class="text-gray-300 max-w-lg">
+                ${category.description}
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="p-8">
+
+            <button
+              onclick="openCategory('${category.folder}')"
+              class="w-full py-4 rounded-2xl bg-white text-black font-semibold hover:scale-[1.02] transition">
+              Explore Folder
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+    });
+
+    /*
+    ==========================================
+    OPEN CATEGORY
+    ==========================================
+    */
+
+    function openCategory(folder) {
+
+      const category = categories.find(c => c.folder === folder);
+
+      if (!category) return;
+
+      let html = `
+      
+        <div id="categoryPage"
+          class="folder-page fixed inset-0 overflow-y-auto bg-black z-[9999] p-6 md:p-10">
+
+          <div class="max-w-7xl mx-auto">
+
+            <div class="flex items-center justify-between mb-16">
+
+              <div>
+
+                <p class="uppercase tracking-[0.4em] text-gray-500 text-sm mb-3">
+                  Event Folder
+                </p>
+
+                <h1 class="text-5xl md:text-6xl font-black">
+                  ${category.name}
+                </h1>
+
+              </div>
+
+              <button
+                onclick="closeCategory(event)"
+                class="text-5xl text-white hover:scale-110 transition">
+                ×
+              </button>
+
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      `;
+
+      category.videos.forEach(video => {
+
+        html += `
+
+          <div class="glass rounded-[32px] overflow-hidden card-hover">
+
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              class="w-full h-[320px] bg-black">
+
+              <source src="${video}" type="video/mp4">
+
+            </video>
+
+            <div class="p-6">
+
+              <div class="flex items-center justify-between mb-4">
+
+                <h3 class="text-3xl font-bold">
+                  Cinematic Experience
+                </h3>
+
+                <div class="px-4 py-2 rounded-full bg-white/10 text-sm">
+                  HD
+                </div>
+
+              </div>
+
+              <p class="text-gray-400 leading-relaxed">
+                Premium event production showcase with cinematic storytelling and immersive luxury atmosphere.
+              </p>
+
+            </div>
+
+          </div>
+
+        `;
+      });
+
+      html += `
+            </div>
+          </div>
+        </div>
+      `;
+
+      document.body.insertAdjacentHTML("beforeend", html);
+
+      document.body.style.overflow = "hidden";
+    }
+
+    /*
+    ==========================================
+    CLOSE CATEGORY
+    ==========================================
+    */
+
+    function closeCategory(event) {
+
+      event.stopPropagation();
+
+      const page = document.getElementById("categoryPage");
+
+      if (page) {
+        page.remove();
+      }
+
+      document.body.style.overflow = "auto";
+    }
+
+    /*
+    ==========================================
+    REVEAL ANIMATION
+    ==========================================
+    */
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+
+      });
+
+    }, {
+      threshold: 0.1
+    });
+
+    reveals.forEach(el => observer.observe(el));
+
+  </script>
+
+</body>
+</html>
+
+
+
+

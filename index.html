@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trio Eventilicious</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: black;
+      overflow-x: hidden;
+    }
+
+    .hero-slide {
+      animation: heroFade 18s infinite;
+      opacity: 0;
+    }
+
+    .hero-slide:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .hero-slide:nth-child(2) {
+      animation-delay: 6s;
+    }
+
+    .hero-slide:nth-child(3) {
+      animation-delay: 12s;
+    }
+
+    @keyframes heroFade {
+      0% {
+        opacity: 0;
+        transform: scale(1);
+      }
+
+      10% {
+        opacity: 0.35;
+      }
+
+      30% {
+        opacity: 0.45;
+        transform: scale(1.08);
+      }
+
+      40% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .reveal-section {
+      opacity: 0;
+      transform: translateY(80px);
+      transition: all 1.2s ease;
+    }
+
+    .reveal-section.active {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    @keyframes introFadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+        filter: blur(10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+        filter: blur(0px);
+      }
+    }
+
+    @keyframes lineExpand {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+
+      100% {
+        width: 220px;
+        opacity: 1;
+      }
+    }
+
+    .intro-subtitle {
+      animation: introFadeUp 1.2s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .intro-title {
+      animation: introFadeUp 1.5s ease forwards;
+      animation-delay: 0.8s;
+    }
+
+    .intro-line {
+      animation: lineExpand 1.2s ease forwards;
+      animation-delay: 1.4s;
+    }
+
+    .intro-description {
+      animation: introFadeUp 1.5s ease forwards;
+      animation-delay: 1.8s;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-scroll {
+      animation: scroll 28s linear infinite;
+      width: max-content;
+    }
+
+    @media (max-width: 768px) {
+      #navbar {
+        width: calc(100% - 32px);
+        justify-content: space-between;
+        gap: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .animate-scroll {
+        animation-duration: 40s;
+      }
+
+      .hero-slide {
+        object-position: center;
+      }
+
+      h1 {
+        line-height: 1.1;
+      }
+
+      .group {
+        width: 280px !important;
+        height: auto !important;
+      }
+
+      video {
+        object-fit: cover;
+      }
+
+      #contact .flex,
+      #about-us .flex {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cursor-none {
+        cursor: auto !important;
+      }
+
+      #cursor {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white cursor-none">
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor"
+    class="fixed top-0 left-0 w-6 h-6 rounded-full border border-white/60 pointer-events-none z-[99999] mix-blend-difference transition-transform duration-150">
+  </div>
+
+  <!-- AMBIENT GLOW -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar"
+    class="fixed top-6 left-1/2 -translate-x-1/2 z-[999] backdrop-blur-xl bg-white/5 border border-white/10 px-8 py-4 rounded-full flex items-center gap-8 transition-all duration-500">
+
+    <a href="#portfolio" class="text-sm text-gray-300 hover:text-white transition">
+      Portfolio
+    </a>
+
+    <a href="#videos" class="text-sm text-gray-300 hover:text-white transition">
+      Video
+    </a>
+
+    <a href="#about-us" class="text-sm text-gray-300 hover:text-white transition">
+      About Us
+    </a>
+
+    <a href="#contact"
+      class="px-5 py-2 rounded-full bg-white text-black text-sm font-semibold hover:scale-105 transition">
+      Book Now
+    </a>
+  </nav>
+
+  <!-- INTRO -->
+  <div id="intro-screen"
+    class="fixed inset-0 z-[9999] bg-black flex items-center justify-center overflow-hidden transition-opacity duration-[2000ms]">
+
+    <div class="absolute w-[900px] h-[900px] rounded-full bg-white/10 blur-3xl animate-pulse"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black"></div>
+
+    <div class="relative z-10 text-center px-6">
+
+      <p class="intro-subtitle uppercase tracking-[0.6em] text-sm text-gray-400 mb-6 opacity-0">
+         Trio Eventilicious
+      </p>
+
+      <h1 class="intro-title text-5xl md:text-8xl font-bold leading-tight mb-6 opacity-0">
+        Turning Every Event<br />Into An Experience
+      </h1>
+
+      <div class="intro-line mx-auto w-0 h-[2px] bg-white/40 mb-8"></div>
+
+      <p class="intro-description text-gray-400 max-w-2xl mx-auto text-lg opacity-0">
+        Creative event experiences powered by intelligent booking systems.
+      </p>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section
+    class="relative h-screen flex items-center justify-center text-center overflow-hidden reveal-section">
+
+    <div class="absolute inset-0 z-0">
+
+      <img
+        src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop"
+        class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0">
+
+      <img
+        src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1600&auto=format&fit=crop"
+        class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0">
+
+      <img
+        src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1600&auto=format&fit=crop"
+        class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0">
+
+    </div>
+
+    <div id="parallax-layer"
+      class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black z-[1]">
+    </div>
+
+    <video autoplay loop muted playsinline
+      class="absolute inset-0 w-full h-full object-cover opacity-40">
+      <source
+        src="https://cdn.coverr.co/videos/coverr-wedding-toast-1579458615664?download=1080p"
+        type="video/mp4">
+    </video>
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 max-w-4xl px-6">
+
+      <p class="uppercase tracking-[0.4em] text-sm text-gray-300 mb-4">
+        Trio Eventilicious
+      </p>
+
+      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+        Turning Every Event Into An Experience
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed">
+        We combine creative event planning with AI-powered booking systems to make
+        reservations, customer engagement, and event experiences smoother, faster,
+        and more interactive.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+
+        <a href="#portfolio"
+          class="px-8 py-4 rounded-2xl bg-white text-black font-semibold hover:scale-105 transition">
+          Explore Portfolio
+        </a>
+
+        <a href="#contact"
+          class="px-8 py-4 rounded-2xl border border-white hover:bg-white hover:text-black transition">
+          Book Now
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OBJECTIVE -->
+  <section class="py-24 px-6 md:px-16 bg-zinc-950">
+
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
+      <div>
+
+        <p class="text-sm uppercase tracking-[0.3em] text-gray-400 mb-4">
+          Our Objective
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Smart Booking Meets Creative Event Experiences
+        </h2>
+
+        <p class="text-gray-300 text-lg leading-relaxed mb-6">
+          Our goal is to help customers discover, explore, and book events seamlessly
+          through an AI-powered system connected directly to WhatsApp and Telegram.
+        </p>
+
+        <p class="text-gray-400 leading-relaxed">
+          Instead of traditional booking methods, visitors can instantly interact with
+          our chatbot, ask questions, view packages, and make reservations in a faster
+          and more engaging way.
+        </p>
+
+      </div>
+
+      <div class="relative">
+
+        <img
+          src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=1400&auto=format&fit=crop"
+          class="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
+        />
+
+        <div
+          class="absolute -bottom-6 -left-6 bg-white text-black p-6 rounded-3xl shadow-2xl max-w-xs">
+
+          <p class="text-4xl font-bold">24/7</p>
+
+          <p class="text-sm mt-2 text-zinc-700">
+            AI chatbot available anytime for instant booking and customer support.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- PHOTO SHOWCASE -->
+  <section id="portfolio" class="reveal-section py-24 px-6 md:px-16 bg-black overflow-hidden" class="py-24 px-6 md:px-16 bg-black overflow-hidden">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-12">
+        <div>
+          <p class="uppercase tracking-[0.3em] text-gray-400 text-sm mb-3">
+            Interactive Gallery
+          </p>
+
+          <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+            <h2 class="text-4xl md:text-5xl font-bold">
+              Event Portfolio
+            </h2>
+
+            <a href="portfolio.html"
+              class="w-fit px-6 py-3 rounded-full border border-white/10 backdrop-blur-xl bg-white/5 hover:bg-white hover:text-black transition duration-500 text-sm font-semibold tracking-wide">
+              View All Portfolio
+            </a>
+          </div>
+        </div>
+
+        <p class="text-gray-400 max-w-lg hidden md:block">
+          Premium cinematic gallery showcasing weddings, anniversaries, birthdays, and corporate events.
+        </p>
+      </div>
+
+      <div class="relative overflow-hidden rounded-[40px] border border-white/10 bg-zinc-950/50 backdrop-blur-xl">
+
+        <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
+
+        <div class="flex animate-scroll gap-6 p-6">
+
+          <!-- PHOTO CARD 1 -->
+          <div class="relative w-[360px] h-[460px] rounded-3xl overflow-hidden shrink-0 group border border-white/10 bg-black">
+
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1400&auto=format&fit=crop"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+            />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-white/5 backdrop-blur-[2px]"></div>
+
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-gray-300 mb-2">
+                Wedding Event
+              </p>
+
+              <h3 class="text-3xl font-bold mb-2">
+                Wedding Celebration
+              </h3>
+
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Elegant luxury wedding setup with cinematic atmosphere.
+              </p>
+            </div>
+          </div>
+
+          <!-- PHOTO CARD 2 -->
+          <div class="relative w-[360px] h-[460px] rounded-3xl overflow-hidden shrink-0 group border border-white/10 bg-black">
+
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1400&auto=format&fit=crop"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+            />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-white/5 backdrop-blur-[2px]"></div>
+
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-gray-300 mb-2">
+                Corporate Event
+              </p>
+
+              <h3 class="text-3xl font-bold mb-2">
+                Annual Dinner
+              </h3>
+
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Professional corporate experiences with immersive lighting.
+              </p>
+            </div>
+          </div>
+
+          <!-- PHOTO CARD 3 -->
+          <div class="relative w-[360px] h-[460px] rounded-3xl overflow-hidden shrink-0 group border border-white/10 bg-black">
+
+            <img
+              src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?q=80&w=1400&auto=format&fit=crop"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+            />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-white/5 backdrop-blur-[2px]"></div>
+
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-gray-300 mb-2">
+                Birthday Event
+              </p>
+
+              <h3 class="text-3xl font-bold mb-2">
+                Birthday Party
+              </h3>
+
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Energetic birthday celebrations with vibrant visuals.
+              </p>
+            </div>
+          </div>
+
+          <!-- PHOTO CARD 4 -->
+          <div class="relative w-[360px] h-[460px] rounded-3xl overflow-hidden shrink-0 group border border-white/10 bg-black">
+
+            <img
+              src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1400&auto=format&fit=crop"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+            />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-white/5 backdrop-blur-[2px]"></div>
+
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-gray-300 mb-2">
+                Anniversary Event
+              </p>
+
+              <h3 class="text-3xl font-bold mb-2">
+                Anniversary Night
+              </h3>
+
+              <p class="text-gray-300 text-sm leading-relaxed">
+                Romantic anniversary setups with elegant ambience.
+              </p>
+            </div>
+          </div>
+
+          <!-- DAILY AI GENERATED PHOTOS -->
+          <div class="relative w-[360px] h-[460px] rounded-3xl overflow-hidden shrink-0 group border border-white/10 bg-black">
+            <img src="pictures/daily-image-ad-1-baby-shower.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-gray-300 mb-2">Baby Shower</p>
+              <h3 class="text-3xl font-bold mb-2">Golden Hour Baby Shower</h3>
+            </div>
+          </div>
+
+          <div class="relative w-[360px] h-[460px] rounded-3xl overflow-hidden shrink-0 group border border-white/10 bg-black">
+            <img src="pictures/daily-image-ad-2-anniversary.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-gray-300 mb-2">Anniversary</p>
+              <h3 class="text-3xl font-bold mb-2">Skyline Anniversary Dinner</h3>
+            </div>
+          </div>
+
+          <!-- DUPLICATE FOR INFINITE SCROLL -->
+          <div class="relative w-[360px] h-[460px] rounded-3xl overflow-hidden shrink-0 group border border-white/10 bg-black">
+
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1400&auto=format&fit=crop"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+            />
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-white/5 backdrop-blur-[2px]"></div>
+
+            <div class="absolute bottom-6 left-6 right-6">
+              <p class="text-sm uppercase tracking-[0.2em] text-gray-300 mb-2">
+                Wedding Event
+              </p>
+
+              <h3 class="text-3xl font-bold mb-2">
+                Wedding Celebration
+              </h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO SECTION -->
+   
+  <section id="videos" class="reveal-section py-24 px-6 md:px-16 bg-zinc-950 overflow-hidden">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="mb-12 text-center flex flex-col items-center">
+        <p class="uppercase tracking-[0.3em] text-gray-400 text-sm mb-3">
+          Video Showcase
+        </p>
+
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Experience The Atmosphere
+        </h2>
+
+        <a href="videos.html"
+          class="px-6 py-3 rounded-full border border-white/10 backdrop-blur-xl bg-white/5 hover:bg-white hover:text-black transition duration-500 text-sm font-semibold tracking-wide mb-6">
+          View All Videos
+        </a>
+
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Cinematic event showcases playing automatically in a smooth scrolling gallery.
+        </p>
+      </div>
+
+      <div class="relative overflow-hidden rounded-[40px] border border-white/10">
+
+        <div class="flex animate-scroll gap-6 p-6">
+
+          <!-- VIDEO CARD 1 -->
+          <div class="relative w-[420px] h-[260px] rounded-3xl overflow-hidden shrink-0 group bg-black border border-white/10">
+
+            <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <source src="videos/wedding/wedding.mp4" type="video/mp4">
+            </video>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6">
+              <h3 class="text-2xl font-semibold">Wedding Showcase</h3>
+            </div>
+          </div>
+
+          <!-- VIDEO CARD 2 -->
+          <div class="relative w-[420px] h-[260px] rounded-3xl overflow-hidden shrink-0 group bg-black border border-white/10">
+
+            <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <source src="videos/corporate/corporate.mp4" type="video/mp4">
+            </video>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6">
+              <h3 class="text-2xl font-semibold">Corporate Event</h3>
+            </div>
+          </div>
+
+          <!-- VIDEO CARD 3 -->
+          <!-- DAILY VIDEOS -->
+          <div class="relative w-[420px] h-[260px] rounded-3xl overflow-hidden shrink-0 group bg-black border border-white/10">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <source src="videos/corporate/daily-annualdinner-ad-2026-05-18.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+            <div class="absolute bottom-6 left-6">
+              <h3 class="text-2xl font-semibold">Daily Corporate</h3>
+            </div>
+          </div>
+
+          <div class="relative w-[420px] h-[260px] rounded-3xl overflow-hidden shrink-0 group bg-black border border-white/10">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <source src="videos/anniversary/daily-anniversary-video-2026-05-18.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+            <div class="absolute bottom-6 left-6">
+              <h3 class="text-2xl font-semibold">Daily Anniversary</h3>
+            </div>
+          </div>
+
+          <!-- DUPLICATE FOR INFINITE SCROLL -->
+          <div class="relative w-[420px] h-[260px] rounded-3xl overflow-hidden shrink-0 group bg-black border border-white/10">
+
+            <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <source src="videos/wedding/wedding.mp4" type="video/mp4">
+            </video>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6">
+              <h3 class="text-2xl font-semibold">Wedding Showcase</h3>
+            </div>
+          </div>
+
+          <div class="relative w-[420px] h-[260px] rounded-3xl overflow-hidden shrink-0 group bg-black border border-white/10">
+
+            <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <source src="videos/corporate/corporate.mp4" type="video/mp4">
+            </video>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6">
+              <h3 class="text-2xl font-semibold">Corporate Event</h3>
+            </div>
+          </div>
+
+          <div class="relative w-[420px] h-[260px] rounded-3xl overflow-hidden shrink-0 group bg-black border border-white/10">
+
+            <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+              <source src="videos/birthday/birthday.mp4" type="video/mp4">
+            </video>
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+
+            <div class="absolute bottom-6 left-6">
+              <h3 class="text-2xl font-semibold">Birthday Celebration</h3>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    </div>
+  </section>
+
+  <!-- ABOUT US -->
+  <section id="about-us"
+    class="reveal-section py-24 px-6 md:px-16 bg-zinc-950">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+      <p class="uppercase tracking-[0.3em] text-gray-400 text-sm mb-4">
+        Know About Us
+      </p>
+
+      <h2 class="text-5xl font-bold mb-6 leading-tight">
+        Follow Our Latest Event Experiences
+      </h2>
+
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+        Stay connected with us through Instagram and Facebook to explore our latest
+        event setups, AI-generated campaigns, cinematic showcases, and behind-the-scenes content.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6">
+
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/trio.eventilicious?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          target="_blank"
+          class="px-10 py-5 bg-pink-500 rounded-2xl text-lg font-semibold hover:scale-105 transition shadow-2xl">
+
+          Instagram
+        </a>
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/profile.php?id=61590692570110"
+          target="_blank"
+          class="px-10 py-5 bg-blue-600 rounded-2xl text-lg font-semibold hover:scale-105 transition shadow-2xl">
+
+          Facebook
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact"
+    class="reveal-section py-24 px-6 md:px-16 bg-gradient-to-b from-zinc-950 to-black">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+      <p class="uppercase tracking-[0.3em] text-gray-400 text-sm mb-4">
+        Ready To Book?
+      </p>
+
+      <h2 class="text-5xl font-bold mb-6 leading-tight">
+        Connect Directly With Our AI Chatbot
+      </h2>
+
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+        Customers can immediately start a booking conversation through WhatsApp or Telegram.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6">
+
+        <a href="https://api.whatsapp.com/send?phone=60129615098"
+          target="_blank"
+          class="px-10 py-5 bg-green-500 rounded-2xl text-lg font-semibold hover:scale-105 transition shadow-2xl">
+
+          WhatsApp Booking
+        </a>
+
+        <a href="https://t.me/Codligence_bot"
+          target="_blank"
+          class="px-10 py-5 bg-sky-500 rounded-2xl text-lg font-semibold hover:scale-105 transition shadow-2xl">
+
+          Telegram Booking
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 py-8 px-6 text-center text-gray-500 text-sm">
+    © 2026 AI Event Booking Portfolio. All rights reserved.
+  </footer>
+
+  <script>
+    // SECTION REVEAL
+    const revealSections = document.querySelectorAll('.reveal-section');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    revealSections.forEach((section) => {
+      revealObserver.observe(section);
+    });
+
+    // CUSTOM CURSOR
+    if (window.innerWidth > 768) {
+      const cursor = document.getElementById('cursor');
+
+      window.addEventListener('mousemove', (e) => {
+        cursor.style.transform =
+          `translate(${e.clientX - 12}px, ${e.clientY - 12}px)`;
+      });
+    }
+
+    // PARALLAX
+    const parallaxLayer = document.getElementById('parallax-layer');
+
+    window.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 30;
+      const y = (e.clientY / window.innerHeight - 0.5) * 30;
+
+      parallaxLayer.style.transform =
+        `translate(${x}px, ${y}px)`;
+    });
+
+    // NAVBAR SCROLL
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        navbar.classList.add('bg-black/40');
+        navbar.classList.add('py-3');
+      } else {
+        navbar.classList.remove('bg-black/40');
+      }
+    });
+
+    // INTRO SCREEN
+    setTimeout(() => {
+      const intro = document.getElementById('intro-screen');
+
+      intro.style.opacity = '0';
+
+      setTimeout(() => {
+        intro.style.display = 'none';
+      }, 2200);
+    }, 5200);
+
+    // TILT EFFECT
+    const tiltElements = document.querySelectorAll('.group');
+
+    tiltElements.forEach((card) => {
+
+      card.addEventListener('mousemove', (e) => {
+
+        if (window.innerWidth <= 768) return;
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+
+        card.style.transform =
+          `perspective(1200px)
+          rotateX(${rotateX}deg)
+          rotateY(${rotateY}deg)
+          scale3d(1.03,1.03,1.03)`;
+
+        card.style.transition = 'transform 0.08s linear';
+      });
+
+      card.addEventListener('mouseleave', () => {
+
+        card.style.transform =
+          'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+
+        card.style.transition = 'transform 0.5s ease';
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
