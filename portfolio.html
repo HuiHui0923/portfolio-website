@@ -98,627 +98,640 @@
 
   <!-- GALLERY -->
   <section class="px-6 md:px-16 py-24">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="
+    <!-- CATEGORY FILTER -->
+    <div class="mb-12 flex flex-wrap justify-center gap-3" id="categoryFilters">
+      <button class="filter-btn active px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="all">All</button>
+      <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="wedding">Wedding</button>
+      <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="corporate">Corporate</button>
+      <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="birthday">Birthday</button>
+      <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="engagement">Engagement</button>
+      <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="anniversary">Anniversary</button>
+      <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="baby">Baby</button>
+      <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="general">Party</button>
+      <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium border border-white/15 bg-white/10 text-white hover:bg-white/20 transition" data-filter="festive">Festive</button>
+    </div>
+grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/corporate.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Gala dinner">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/corporate2.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Gala dinner">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/corporate3.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Gala dinner">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/Wedding.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Gala dinner">
       </div>
 
       <!-- DAILY AI GENERATED PHOTOS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="anniversary">
         <img src="pictures/daily-anniversary-ad-2026-05-18.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Anniversary Dinner">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/daily-babyshower-ad-2026-05-18.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Shower">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/daily-test-birthday-upload-2026-05-18.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Birthday Setup">
       </div>
 
       <!-- 2026-05-19 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/daily-wedding-ad-2026-05-19.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Luxury Wedding �?Intentional Wedding">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/daily-corporate-ad-2026-05-19.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Corporate Gala - Corporate Grandeur">
       </div>
 
       <!-- 2026-05-20 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/daily-image-ad-1-baby-shower.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Shower - The Thoughtful Baby Shower">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="anniversary">
         <img src="pictures/daily-image-ad-2-anniversary.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Anniversary - Timeless Anniversary">
       </div>
 
       <!-- 2026-05-25 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-05-25_corporate_motivation.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Corporate Motivation - Team Inspiration Session">
       </div>
 
       <!-- 2026-05-26 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-05-26_engagement_story.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Engagement Story - Engagement Dinner KL">
       </div>
 
       <!-- 2026-05-28 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/2026-05-28_baby_shower.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Shower - Elegant Pink Dessert Table">
       </div>
 
       <!-- 2026-05-29 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="anniversary">
         <img src="pictures/2026-05-29_anniversary.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Anniversary - Candlelight Dinner">
       </div>
 
       <!-- 2026-06-05 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-06-05_june_engagement.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Engagement - June Engagement Feature">
       </div>
 
       <!-- 2026-06-08 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-06-08_birthday.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Birthday - Luxury Birthday Celebration">
       </div>
 
       <!-- 2026-06-15 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-06-15_corporate_motivation.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Corporate Motivation">
       </div>
 
       <!-- 2026-06-15 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-06-15_business_conference.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Business Conference">
       </div>
 
       <!-- 2026-06-15 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="anniversary">
         <img src="pictures/2026-06-15_anniversary_dinner.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Company Anniversary Dinner">
       </div>
 
       <!-- 2026-06-15 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-06-15_product_launch.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Product Launch">
       </div>
 
       <!-- 2026-06-12 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-06-12_anniversary_dinner.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Anniversary - Romantic Dinner Setup">
       </div>
 
       <!-- 2026-06-18 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-06-18_corporate_spotlight.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Corporate Spotlight">
       </div>
 
       <!-- 2026-06-19 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/2026-06-19_baby_shower.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Shower Joy">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/2026-06-19_baby_gender_reveal.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Gender Reveal">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/2026-06-19_welcome_baby.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Welcome Baby Party">
       </div>
 
       <!-- 2026-06-22 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-06-22_wedding_feature.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Dream Wedding Feature">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-06-22_luxury_ballroom.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Luxury Wedding Ballroom">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-06-22_outdoor_wedding.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Outdoor Wedding Setup">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-06-22_wedding_decor.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding Reception Decor">
       </div>
 
                         <!-- 2026-07-01 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-01_weekend_engagement.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Weekend Engagement">
       </div>
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-01_garden_party.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Garden Party">
       </div>
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-01_poolside_party.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Poolside Party">
       </div>
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-01_bbq_celebration.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="BBQ Celebration">
       </div>
 
       <!-- 2026-06-30 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-06-30_end_of_month_review.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="End of Month Review">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-06-30_best_of_june.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Best of June Gallery">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-06-30_thank_you_clients.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Thank You Clients">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-06-30_book_july_events.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Book July Events">
       </div>
 
 <!-- 2026-06-26 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="anniversary">
         <img src="pictures/2026-06-26_anniversary_special.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Anniversary Special">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="anniversary">
         <img src="pictures/2026-06-26_golden_anniversary.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Golden Anniversary Party">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="anniversary">
         <img src="pictures/2026-06-26_surprise_anniversary.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Surprise Anniversary">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-06-26_couples_getaway.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Couples Getaway Setup">
       </div>
 
 <!-- 2026-06-24 AI GENERATED ASSETS -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-06-24_birthday_party.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Birthday Party Inspiration">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-06-24_themed_birthday.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Themed Birthday Party">
       </div>
 
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-06-24_sweet_16.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Sweet 16 Celebration">
       </div>
 
       <!-- IG_Reels Portfolio Photos -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/IG_Wedding.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding - Ballroom Setup">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/IG_Wedding2.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding - Elegant Reception">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/IG_Corporate.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Corporate - Annual Dinner">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/IG_BabyShower.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Shower - Sweet Celebration">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="festive">
         <img src="pictures/IG_BrandRoadshow.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Brand Roadshow - Event Activation">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/IG_ChineseNewYear.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Chinese New Year - Festive Celebration">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="festive">
         <img src="pictures/IG_PopUpStore.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Pop-Up Store - Brand Activation">
       </div>
 
       <!-- IG_Reels New Additions -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/IG_Wedding3.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding - Romantic Setup">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/IG_Wedding4.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding - Grand Reception">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/IG_Wedding5.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding - Floral Arrangement">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/IG_Wedding6.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding - Dinner Setup">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/IG_Wedding7.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding - Luxury Decor">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/IG_BabyShower2.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Shower - Pastel Theme">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/IG_BabyShower3.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Shower - Balloon Decor">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="baby">
         <img src="pictures/IG_BabyShower4.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Baby Shower - Dessert Table">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="festive">
         <img src="pictures/IG_ChineseNewYear3.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Chinese New Year - Festive Decor">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/IG_ChineseNewYear4.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Chinese New Year - Celebration">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/IG_ChineseNewYear5.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Chinese New Year - Family Gathering">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/IG_HariRaya.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Hari Raya - Celebration">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="festive">
         <img src="pictures/IG_HariRaya2.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Hari Raya - Family">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-03_engagement_stories.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Engagement Stories - 03/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-03_proposal_ideas.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Proposal Ideas - 03/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-03_romantic_setup.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Romantic Setup - 03/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-03_engagement_ring.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Engagement Ring Showcase - 03/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-07-07_birthday_party_ideas.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Birthday Party Ideas - 07/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-07-07_kids_birthday.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Kids Birthday Setup - 07/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-07-07_birthday_cake.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Birthday Cake Design - 07/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-13_garden_party.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Garden Party - 13/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-13_poolside.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Poolside Celebration - 13/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-13_bbq_party.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="BBQ Party - 13/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-13_sunday_brunch.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Sunday Brunch - 13/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-07-07_sweet16.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Sweet 16 Planning - 07/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-09_engagement_stories.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Engagement Stories - 09/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-09_proposal_ideas.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Proposal Ideas - 09/07/2026">
       </div>
 
       <!-- 2026-07-15 Corporate -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-07-15_monday_corporate.png"
           class="w-full h-[500px] object-cover modal-image" alt="Monday Corporate - 15/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-07-15_business_meeting.png"
           class="w-full h-[500px] object-cover modal-image" alt="Business Meeting Setup - 15/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-07-15_team_building.png"
           class="w-full h-[500px] object-cover modal-image" alt="Team Building Plan - 15/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-07-15_conference_room.png"
           class="w-full h-[500px] object-cover modal-image" alt="Conference Room Tour - 15/07/2026">
       </div>
 
       <!-- 2026-07-17 Engagement & Couples -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-17_engagement_party.png"
           class="w-full h-[500px] object-cover modal-image" alt="Engagement Party Ideas - 17/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-17_proposal_decor.png"
           class="w-full h-[500px] object-cover modal-image" alt="Proposal Decor - 17/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-17_romantic_getaway.png"
           class="w-full h-[500px] object-cover modal-image" alt="Romantic Getaway - 17/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-07-17_couples_photos.png"
           class="w-full h-[500px] object-cover modal-image" alt="Couples Photos - 17/07/2026">
       </div>
       
       <!-- 2026-07-21 Birthday -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-07-21_birthday_inspo.png"
           class="w-full h-[500px] object-cover modal-image" alt="Birthday Inspo - 21/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-07-21_birthday_party_ideas.png"
           class="w-full h-[500px] object-cover modal-image" alt="Birthday Party Ideas - 21/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-07-21_birthday_cake_design.png"
           class="w-full h-[500px] object-cover modal-image" alt="Birthday Cake Design - 21/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="birthday">
         <img src="pictures/2026-07-21_sweet_16_planning.png"
           class="w-full h-[500px] object-cover modal-image" alt="Sweet 16 Planning - 21/07/2026">
       </div>
 
        <!-- 2026-07-23 Wedding -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-07-23_wedding_wednesday.png"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding Wednesday - 23/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-07-23_luxury_ballroom.png"
           class="w-full h-[500px] object-cover modal-image" alt="Luxury Ballroom - 23/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-23_outdoor_setup.png"
           class="w-full h-[500px] object-cover modal-image" alt="Outdoor Setup - 23/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-07-23_wedding_decor.png"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding Decor - 23/07/2026">
       </div>
       <!-- 2026-07-27 Corporate Monday -->
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-07-27_monday_motivation.png"
           class="w-full h-[500px] object-cover modal-image" alt="Monday Motivation - 27/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-07-27_corporate_excellence.png"
           class="w-full h-[500px] object-cover modal-image" alt="Corporate Excellence - 27/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-07-27_business_conference.png"
           class="w-full h-[500px] object-cover modal-image" alt="Business Conference - 27/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-07-27_team_building.png"
           class="w-full h-[500px] object-cover modal-image" alt="Team Building - 27/07/2026">
       </div>
 
 
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-07-31/wedding_prep.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Friday Wedding Prep - 31/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-07-31/ballroom_showcase.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Ballroom Showcase - 31/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-07-31/outdoor_wedding.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Outdoor Wedding - 31/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-07-31/wedding_ideas.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding Ideas - 31/07/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-08-03/monday_corporate.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Monday Corporate - 03/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-08-03/business_meeting.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Business Meeting Setup - 03/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-08-03/team_building.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Team Building Plan - 03/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-08-03/budget_events.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Budget-Friendly Events - 03/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-08-05/proposal_ideas.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Proposal Ideas - 05/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-08-05/engagement_party.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Engagement Party - 05/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="anniversary">
         <img src="pictures/2026-08-05/anniversary_dinner.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Anniversary Dinner - 05/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="engagement">
         <img src="pictures/2026-08-05/romantic_getaway.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Romantic Getaway - 05/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-08-07/wedding_decor.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Wedding Decor Ideas - 07/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-08-07/ballroom_setup.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Ballroom Setup - 07/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-08-07/outdoor_wedding.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Outdoor Wedding - 07/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="wedding">
         <img src="pictures/2026-08-07/honeymoon.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Honeymoon Planning - 07/08/2026">
       </div>
 
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-08-10/monday_motivation.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Monday Motivation - 10/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-08-10/office_party.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Office Party Ideas - 10/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="corporate">
         <img src="pictures/2026-08-10/product_launch.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Product Launch Setup - 10/08/2026">
       </div>
 
-      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer">
+      <div class="gallery-card reveal overflow-hidden rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl cursor-pointer" data-category="general">
         <img src="pictures/2026-08-10/year_end_dinner.jpg"
           class="w-full h-[500px] object-cover modal-image" alt="Year-End Dinner - 10/08/2026">
       </div>
@@ -785,7 +798,27 @@
         document.body.style.overflow = '';
       }
     });
-  </script>
+  
+    // Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        galleryCards.forEach((card) => {
+          const cat = card.dataset.category || 'general';
+          if (filter === 'all' || cat === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+</script>
 
 </body>
 </html>
